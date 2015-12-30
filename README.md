@@ -13,6 +13,7 @@
 1. [Usage](#Usage)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
+    1. [Requirements](#requirements)
 1. [Team](#team)
 1. [Contributing](#contributing)
 
@@ -56,13 +57,17 @@
 >
 >
 > - __Add a review / Rate a package / Download a package__
-> To write a review, rate a package, or download a package to your
+> To write a review, rate a package, or download a package, click on the name of that package.  You can only review and rate a package once.  If you rate a package a second time, it will replace the first review and rating.
 
 > - __Further Instructions__
 > Visit our GitHub repo for Jarvis Voice Command Desktop Application for further instructions on how to use the desktop app.
 
 
 ## Development
+
+### Requirements
+- Node 0.10.x
+- MongoDB
 
 ### Installing Dependencies
 
