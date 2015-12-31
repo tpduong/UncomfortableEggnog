@@ -171,15 +171,22 @@ exports.findPackagesByUsername = function (username, cb) {
   });
 };
 
-exports.addReview = function (id, stars, review, total, cb) {
-  db.PackageEntry.update({ _id: id },
+exports.addReview = function (packageId, review, cb) {
+  db.PackageEntry.update({ _id: packageId },
     {
       $inc: {
-        totalStars: total,
-        stars: stars
+        totalStars: review.totalStars,
+        stars: review.stars
       },
       $push: {
-        reviews: review
+        reviews: {
+          contents: review.contents,
+          //storing username for quick displays
+          username: review.username,
+          userId: review.userId,
+          stars: review.stars,
+          totalStars: review.totalStars
+        }
       }
     },
     function (err, packageEntry) {
@@ -190,6 +197,49 @@ exports.addReview = function (id, stars, review, total, cb) {
     }
   });
 };
+
+exports.updateReview = function (packageId, review, prevReview, cb) {
+
+  var netStars = review.stars - prevReview.stars;
+  var netTotalStars = review.totalStars - prevReview.totalStars;
+
+  var inc = {
+    stars: netStars,
+    totalStars: netTotalStars
+  };
+
+  db.PackageEntry.update({
+    _id: packageId,
+    "reviews.userId": prevReview.userId
+    },
+    {
+      $inc: inc,
+      $set: {
+        'reviews.$': {
+          contents: review.contents,
+          //storing username for quick displays
+          username: review.username,
+          userId: review.userId,
+          stars: review.stars,
+          totalStars: review.totalStars,
+          //updated reviews contain a nested history of previous reviews.  This can be used for
+          //displaying prior reviews in case a review history occurs for a user.
+          prevReview: prevReview
+        }
+      }
+    },
+    function (err, packageEntry) {
+    if (err) {
+      cb(err);
+    } else {
+      console.log(packageEntry);
+      cb(null, packageEntry);
+    }
+  });
+};
+
+
+
 
 exports.findPackageById = function (id, cb) {
   db.PackageEntry.find({_id: id}, function (err, packageEntry) {

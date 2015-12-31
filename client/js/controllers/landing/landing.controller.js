@@ -22,7 +22,7 @@
   function calculateAvg () {
     var avg;
     for (var i = 0; i < self.packages.length; i++) {
-      avg = parseInt(self.packages[i].stars / self.packages[i].totalStars);
+      avg = parseInt(self.packages[i].stars / self.packages[i].totalStars * 100);
       self.packages[i].average = avg || 0;
     }
   }

@@ -38,8 +38,20 @@ module.exports.getPackage = function (req, res) {
           var sendObj = {};
           sendObj.package = entry[0];
           sendObj.user = {
-            username: user.username
+            // userId: user._id,
+            username: user.username,
+            email: user.email,
+            website: user.website
           };
+
+          //check to see and return previous review if exists
+          for (var i = 0; i < sendObj.package.reviews.length; i++) {
+            if (JSON.stringify(sendObj.package.reviews[i].userId) ===
+              JSON.stringify(req.user._id)) {
+              sendObj.prevReview = sendObj.package.reviews[i];
+              break;
+            }
+          }
           res.json(sendObj);
         }
       });
@@ -100,19 +112,39 @@ module.exports.deletePackage = function (req, res) {
   });
 };
 
-module.exports.addReview = function (req, res) {
+module.exports.addOrUpdateReview = function (req, res) {
+
+  var review = {};
+
   var id = req.params.id;
-  var stars = req.body.stars;
-  var review = req.body.review;
-  var total = req.body.totalStars;
-  stars = typeof stars !== 'number' ? 0 : stars;
-  helpers.addReview(id, stars, review, total, function (err, packageEntry) {
-    if (err) {
-      res.redirect('/');
-    } else {
-      res.json(packageEntry);
-    }
-  });
+
+  review.stars = req.body.stars;
+  review.stars = typeof review.stars !== 'number' ? 0 : review.stars;
+  review.contents = req.body.contents;
+  review.totalStars = req.body.totalStars;
+  review.userId = req.user._id;
+  review.username = req.user.username;
+  var prevReview = req.body.prevReview || null;
+  console.log('prev review?', prevReview);
+  if (!prevReview) {
+    helpers.addReview(id, review, function (err, packageEntry) {
+      if (err) {
+        res.redirect('/');
+      } else {
+        res.json(packageEntry);
+      }
+    });
+  } else {
+    helpers.updateReview(id, review, prevReview, function (err, packageEntry) {
+      if (err) {
+        console.log('error');
+        res.redirect('/');
+      } else {
+        console.log('successfully updated', packageEntry);
+        res.json(packageEntry);
+      }
+    });
+  }
 };
 
 module.exports.downloadPackage = function (req, res, next) {

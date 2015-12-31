@@ -68,7 +68,8 @@ var PackageEntrySchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  reviews: [String],
+  //review objects ==> { contents: String, userId: String, stars: Number, totalStars: Number}
+  reviews: [mongoose.Schema.Types.Mixed],
   downloads: {
     type: Number,
     default: 0

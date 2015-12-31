@@ -2,7 +2,7 @@
   <div class="col-xs-8">
     <h3>
       {{package.info.title}}
-      <a ng-show="package.canEditPackage" class="name" ui-sref="editPackage({packageName: package.info.title})"><button>edit this package</button></a>
+      <a ng-show="package.user.canEditPackage" class="name" ui-sref="editPackage({packageName: package.info.title})"><button>edit this package</button></a>
     </h3>
     <h5>{{package.info.description}}</h5>
     <p>{{package.info.packageContents}}</p>
@@ -14,16 +14,15 @@
 
     </h3>
     <p>{{package.user.email}}</p>
-    <p>{{package.user.github}}</p>
+    <p>{{package.user.website}}</p>
   </div>
   <div>
-    <div rating score=0 package="package.info"></div>
+    <div rating score=0 package="package.info" user="package.user"></div>
     <div ng-repeat="review in package.info.reviews track by $index">
-      <p>{{review}}</p>
+      <p>{{review.contents}}<span><stars type="view" max="5" score="review.stars / review.totalStars*5"></stars></span></p>
     </div>
-    </div>
-    <a href="/api/download/{{package.info._id}}">
-      <button type="button" class="btn btn-default">Download</button>
-    </a>
-<!-- <package-info pkg="package"></package-info> -->
+  </div>
+  <a href="/api/download/{{package.info._id}}">
+    <button type="button" class="btn btn-default">Download</button>
+  </a>
 </div>

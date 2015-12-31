@@ -18,7 +18,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="isLoggedIn()"><a ui-sref="signup">Sign Up</a></li>
-        <li ng-hide="isLoggedIn()"><a ui-sref="login">login</a></li>
+        <li ng-hide="isLoggedIn()"><a ui-sref="login">Login</a></li>
         <li ng-show="isLoggedIn()"><a ng-click="goToAccount()">My Account</a></li>
         <li ng-show="isLoggedIn()"><a ng-click="destroySession()" ui-sref="main">Logout</a></li>
       </ul>
