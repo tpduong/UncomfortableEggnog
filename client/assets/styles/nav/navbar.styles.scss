@@ -7,6 +7,10 @@
     li {
       a {
         color: $secondary-font-color;
+        &:hover {
+          @include fade-transition();
+          color: $primary-font-color;
+        }
       }
     }
   }

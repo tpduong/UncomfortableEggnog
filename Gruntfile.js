@@ -23,6 +23,7 @@ module.exports = function (grunt) {
           'client/assets/styles/rating/rating.styles.css': 'client/assets/styles/rating/rating.styles.scss',
           'client/assets/styles/nav/navbar.styles.css': 'client/assets/styles/nav/navbar.styles.scss',
           'client/assets/styles/signup/signup.styles.css': 'client/assets/styles/signup/signup.styles.scss',
+          'client/assets/styles/search/search.styles.css': 'client/assets/styles/search/search.styles.scss',
           'client/assets/styles/index.styles.css': 'client/assets/styles/index.styles.scss',
           'client/assets/styles/color-palette.css': 'client/assets/styles/color-palette.scss',
           'client/assets/styles/effects-mixins.css': 'client/assets/styles/effects-mixins.scss'

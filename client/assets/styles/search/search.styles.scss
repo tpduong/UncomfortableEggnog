@@ -1,0 +1,9 @@
+@import '../landing/landing.styles';
+
+.search-results {
+  /*background-color: $secondary-background-color;
+  border: 1px solid #ECF0F1;*/
+  @extend .package-container;
+  padding: 15px;
+  height: 80vh;
+}

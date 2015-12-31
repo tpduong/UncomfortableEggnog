@@ -16,9 +16,25 @@
 }
 
 .packageDetails {
+  position: relative;
   border: 1px solid #2e2e2e;
   background-color: $package-color;
 }
+
+.packageDetails.entry {
+  /*height: 120px;*/
+  padding: 10px;
+  a {
+    img {
+      margin-left: 15px;
+    }
+  }
+  .date {
+    margin-left: 15px;
+  }
+
+}
+
 
 .starrating {
   float: right;
@@ -64,6 +80,7 @@ a.download {
 }
 
 .desc {
+  color: $third-font-color;
   font-size: 10pt;
   margin: 0 10px 15px 10px;
 }

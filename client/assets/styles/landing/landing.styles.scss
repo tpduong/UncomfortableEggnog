@@ -2,7 +2,7 @@
 @import '../effects-mixins';
 
 body {
-  background-color: black;
+  background-color: $primary-background-color;
 }
 
 div .landing-jumbotron {

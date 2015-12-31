@@ -1,5 +1,5 @@
 
-<div class="packageDetails" ng-class="{'thumbnail': view==='card'}">
+<div class="packageDetails" ng-class="{'thumbnail': view==='card', 'entry': view !=='card'}">
 <link rel="stylesheet" href="../../assets/styles/packages/package.styles.css">
   <div class="row-fluid top-half">
     <a class="package-logo span4" href="">
@@ -36,5 +36,5 @@
   </div>
   <div class="date">
     <span class="card-text"><small class="text-muted">Last updated: {{formatDate(pkg)}}</small></span>
-  <div>
+  </div>
 </div>
