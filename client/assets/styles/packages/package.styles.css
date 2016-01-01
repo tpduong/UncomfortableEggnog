@@ -1,73 +1,59 @@
+/*$star-color: #ff0080;*/
+/*packages*/
+/*$background: red;*/
 .logo {
-  margin-right: 10px;
-}
+  margin-right: 10px; }
 
 .package-widget {
   position: relative;
   background-color: #06202a;
   border: none;
-  display: inline-block;
-}
+  display: inline-block; }
 
 .col-xs-4 {
-  padding: 0 5px;
-}
+  padding: 0 5px; }
 
-.package-container {
-  background-color: #424242;
-  border: 1px solid #ECF0F1;
-}
-.package-container-title {
-  color: white;
-}
-.packageDetails{
+.packageDetails {
   border: 1px solid #2e2e2e;
-  background-color: #0f1a1c;
-}
-.thumbnail a > img {
-  margin-right: 10px;
-}
+  background-color: #0f1a1c; }
 
 .starrating {
-  float: right;
-}
+  float: right; }
 
 .thumbnail {
   height: 120px;
   margin-bottom: 0;
-  margin-left: 0;
-}
+  margin-left: 0; }
+  .thumbnail a img {
+    margin-right: 10px; }
 
-.stars > a {
+stars a {
   padding: 0;
+  margin: 0; }
+  stars a i {
+    padding: 0 2px;
+    margin: 0;
+    color: red; }
+
+a.download, .name a {
+  display: inline-block;
+  color: white;
   margin: 0;
-}
-stars > a > i {
-  padding: 0 2px;
-  margin: 0;
-}
+  text-decoration: none; }
 
 .name {
   position: relative;
   color: white;
-  font-size: 20px;
-}
-.name > a, a.download {
-  display: inline-block;
-  color: white;
-  margin: 0;
-  text-decoration: none;
-}
+  font-size: 20px; }
 
 .desc {
   font-size: 10pt;
-  margin: 0 10px 15px 10px;
-}
-
+  margin: 0 10px 15px 10px; }
 
 .date {
   position: absolute;
   bottom: 0;
   margin-left: 10px;
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
+
+/*# sourceMappingURL=package.styles.css.map */

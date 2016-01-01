@@ -1,33 +1,39 @@
-/*div .landing-jumbotron {
-  height:100vh;
-  background-image: url("../img/lens-flare-vignette.jpg");
-  background-repeat: no-repeat;
-}
+@import '../color-palette';
+@import '../effects-mixins';
 
 body {
   background-color: black;
 }
 
+div .landing-jumbotron {
+  height:100vh;
+  background-image: url("../../img/lens-flare-vignette.jpg");
+  background-repeat: no-repeat;
+}
 
 .title {
-  color: white;
+  color: $primary-font-color;
   font-size: 20px;
-}
-
-.btn-primary, .btn-primary:focus {
-  background-color: #264348;
-  border-color: white;
-}
-
-.btn-primary:hover {
-  background-color: white;
-  color: black;
 }
 
 h1.title {
   font: normal normal 800 30px/40px Arial, Helvetica, sans-serif;
 }
 
+
+
+
+.btn-primary, .btn-primary:focus {
+  @include fade-transition();
+  background-color: #264348;
+  border-color: $primary-font-color;
+}
+
+.btn-primary:hover {
+  @include fade-transition();
+  background-color: $primary-font-color;
+  color: black;
+}
 
 
 i {
@@ -39,7 +45,15 @@ i {
   margin: 0;
 }
 
-.navigation {
+/* Top Ten Packages */
+
+.package-list-container {
+  color: $primary-font-color;
+}
+
+.package-container {
+  background-color: $secondary-background-color;
+  border: 1px solid #ECF0F1;
 }
 
 .search {
@@ -60,6 +74,7 @@ i {
 
 
 .icons {
+  /*margin-left: 40px;*/
   margin-top: -5px;
   float:right;
 }
@@ -69,7 +84,7 @@ i {
   padding: 0 0.5em;
 }
 
-.rating > a {
+/*.rating > a {
   text-decoration: none;
 }
 
@@ -79,7 +94,7 @@ i {
 
 .rating .rating-normal, .rating.rating-normal:hover {
   color: #3C3C3C;
-}
+}*/
 
 .commands {
   overflow: auto;
@@ -87,4 +102,4 @@ i {
   border: 1px black solid;
   border-radius: 5px;
 }
-*/
+

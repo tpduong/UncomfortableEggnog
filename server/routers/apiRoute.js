@@ -4,7 +4,7 @@ var verifyUser = require('../middleware/middleware').verifyUser;
 
 module.exports = function (app) {
   app.get('/top10', apiController.topTen);
-  app.get('/package/:packageName', verifyUser, apiController.getPackage);
+  app.get('/package/:packageName', apiController.getPackage);
   app.post('/package/:id', verifyUser, apiController.addOrUpdateReview);
   app.get('/download/:id', apiController.downloadPackage);
   app.get('/users/:userName/packages', apiController.getUserPackages);

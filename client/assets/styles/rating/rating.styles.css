@@ -1,0 +1,9 @@
+.rating .rating-highlight, .rating.rating-highlight:hover {
+  color: #F4914E; }
+  .rating .rating-highlight a, .rating.rating-highlight:hover a {
+    text-decoration: none; }
+
+.rating .rating-normal, .rating.rating-normal:hover {
+  color: #3C3C3C; }
+
+/*# sourceMappingURL=rating.styles.css.map */

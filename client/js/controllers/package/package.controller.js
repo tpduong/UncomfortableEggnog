@@ -15,14 +15,16 @@
       get('/api/package/' + packageName)
       .then(function (data) {
         if (data === "Not Found") {
-          $state.go('main');
+          $state.go('login');
         }
+        console.log(data);
         self.info = data.package;
-        self.user = data.user;
+        if (data.user) {
+          self.user = data.user;
           self.user.prevReview = data.prevReview || null;
-          // self.user.ownPackage = data.ownPackage || false;
-        if (self.user.username === localStorage.username) {
-          self.user.canEditPackage = true;
+          if (self.user.username === localStorage.username) {
+            self.user.canEditPackage = true;
+          }
         }
       });
     };

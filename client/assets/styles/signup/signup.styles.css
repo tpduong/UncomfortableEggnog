@@ -1,8 +1,105 @@
-/*  .form-signup .ng-dirty.ng-invalid {
-    border: 1px red solid;
-  }*/
+/*$star-color: #ff0080;*/
+/*packages*/
+/*$background: red;*/
+/*@mixin-fadeIn() {
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
- /* .form-signup .ng-pristine.ng-invalid {
-    border: none;
-  }
-*/
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+}*/
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+body {
+  height: 100%; }
+
+legend {
+  font-size: 35px;
+  color: white; }
+
+.form-container {
+  position: relative;
+  /*left: 50%;*/
+  /*top: 50%;*/
+  padding: 0 20px 20px 20px;
+  transform: translateX(20%);
+  margin: 15px;
+  background-color: #424242;
+  width: 70%; }
+  .form-container .form-signup {
+    padding: 20px;
+    margin: 10px;
+    background-color: white; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+fieldset {
+  margin: 0;
+  width: 100%; }
+
+.animate-enter,
+.animate-leave {
+  -webkit-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -moz-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -ms-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -o-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  position: relative;
+  display: block; }
+
+.animate-enter.animate-enter-active,
+.animate-leave {
+  opacity: 1;
+  top: 0;
+  height: 30px; }
+
+.animate-leave.animate-leave-active,
+.animate-enter {
+  opacity: 0;
+  top: -50px;
+  height: 0px; }
+
+/*.animate-enter {*/
+/*@include animate(fadeIn, 1s, 1, linear);*/
+/*border: 20px solid yellow;*/
+/*-webkit-transition: all 2s linear;*/
+/*transition:  all 2s linear;*/
+/*opacity: 0;*/
+/*@extend .fadeIn;*/
+/*}*/
+
+/*# sourceMappingURL=signup.styles.css.map */

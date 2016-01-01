@@ -1,0 +1,78 @@
+/*$star-color: #ff0080;*/
+/*packages*/
+/*$background: red;*/
+/*@mixin-fadeIn() {
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+}*/
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+.navbar {
+  background-color: #424242; }
+  .navbar .navbar-right li a {
+    color: #8DF2E2; }
+
+form.navbar-form {
+  width: 65%; }
+
+.navbar-brand {
+  padding: 8px 0 15px 10px; }
+
+div.search {
+  padding: 0; }
+  div.search input {
+    width: 75%;
+    margin-top: 5px;
+    border-radius: 3px;
+    background-color: #eeeeee; }
+    div.search input:focus {
+      background-color: white;
+      border: 3px solid #8DF2E2;
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+      outline: none; }
+  div.search button, div.search button:focus {
+    /*@include fade-transition();*/
+    width: 15%;
+    /*height: %;*/
+    background-color: #264348;
+    color: white;
+    margin: 2px 0 0 0;
+    border-margin: 0;
+    text-align: center; }
+    div.search button:hover, div.search button:focus:hover {
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+      background-color: white;
+      color: black; }
+  div.search .btn {
+    padding: 1px 12px 0 12px; }
+
+#home-button {
+  /*padding-bottom: 10px;*/
+  /*margin: auto 0;*/ }
+
+/*# sourceMappingURL=navbar.styles.css.map */

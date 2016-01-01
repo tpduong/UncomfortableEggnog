@@ -1,0 +1,77 @@
+@import '../color-palette';
+
+.logo {
+  margin-right: 10px;
+}
+
+.package-widget {
+  position: relative;
+  background-color: #06202a;
+  border: none;
+  display: inline-block;
+}
+
+.col-xs-4 {
+  padding: 0 5px;
+}
+
+.packageDetails {
+  border: 1px solid #2e2e2e;
+  background-color: $package-color;
+}
+
+.starrating {
+  float: right;
+}
+
+.thumbnail {
+  height: 120px;
+  margin-bottom: 0;
+  margin-left: 0;
+  a {
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+
+stars {
+  a {
+    padding: 0;
+    margin: 0;
+    i {
+      padding: 0 2px;
+      margin: 0;
+      color: $star-color;
+    }
+  }
+}
+
+a.download {
+  display: inline-block;
+  color: $primary-font-color;
+  margin: 0;
+  text-decoration: none;
+}
+
+.name {
+  position: relative;
+  color: $primary-font-color;
+  font-size: 20px;
+  a {
+    @extend a.download;
+  }
+}
+
+.desc {
+  font-size: 10pt;
+  margin: 0 10px 15px 10px;
+}
+
+
+.date {
+  position: absolute;
+  bottom: 0;
+  margin-left: 10px;
+  margin-bottom: 0;
+}

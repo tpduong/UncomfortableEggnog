@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Jarvis</title>
+  <!-- vendor styles -->
   <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/styles/nav/navbar.styles.css">
+  <!-- custom styles-->
+  <link rel="stylesheet" href="assets/styles/index.styles.css">
+  <link rel="stylesheet" href="assets/styles/landing/landing.styles.css">
+  <link rel="stylesheet" href="assets/styles/rating/rating.styles.css">
+
   <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="assets/vendor/jquery/dist/jquery.js"></script>
@@ -12,23 +19,22 @@
   <script src="assets/vendor/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
   <script src="assets/vendor/bootstrap/dist/js/bootstrap.js"></script>
-  <!-- <link rel="stylesheet" href="assets/styles/styles.css"> -->
+  <script src="assets/vendor/angular-animate/angular-animate.js"></script>
 </head>
 <body>
   <div ui-view="top"></div>
-  <div class="container">
+  <div class="container main-content">
     <div ui-view="main"></div>
-    <div class="row">
-      <div class="col-xs-4">
-        <h1>Hello</h1>
-      </div>
-      <div class="col-xs-4">
-        <h1>Hello</h1>
-      </div>
-      <div class="col-xs-4">
-        <h1>Hello</h1>
-      </div>
-    </div>
+  </div>
+  <div class="row" id="footer">
+    <a href="https://github.com/UncomfortableEggnog/UncomfortableEggnog">
+      <button class="col-xs-4">About</button>
+    </a>
+    <a href="https://github.com/UncomfortableEggnog/UncomfortableEggnog">
+      <button class="col-xs-4">Team</button>
+    <a href="mailto:uncomfortableeggnog@gmail.com">
+      <button class="col-xs-4">Contact</button>
+    </a>
   </div>
 </body>
 <script src="js/app.module.js"></script>

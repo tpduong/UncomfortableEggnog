@@ -3,7 +3,7 @@
   angular.module('app')
     .directive('rating', RatingDirective);
 
-  function RatingDirective (ApiFactory) {
+  function RatingDirective (ApiFactory, $state) {
     var directive = {
       restrict: 'AE',
       templateUrl: 'js/html/rating/rating.main.html',
@@ -48,7 +48,11 @@
           post('/api/package/' + id, review)
           .then(function (res) {
             scope.review = "";
-            console.log('updated or submitted:', res);
+            if (res === "Not Logged In") {
+              $state.go('login');
+            } else {
+              console.log('updated or submitted:', res);
+            }
           });
         }
       };

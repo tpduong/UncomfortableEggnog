@@ -1,0 +1,113 @@
+/*$star-color: #ff0080;*/
+/*packages*/
+/*$background: red;*/
+/*@mixin-fadeIn() {
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+}*/
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+body {
+  background-color: black; }
+
+div .landing-jumbotron {
+  height: 100vh;
+  background-image: url("../../img/lens-flare-vignette.jpg");
+  background-repeat: no-repeat; }
+
+.title {
+  color: white;
+  font-size: 20px; }
+
+h1.title {
+  font: normal normal 800 30px/40px Arial, Helvetica, sans-serif; }
+
+.btn-primary, .btn-primary:focus {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  background-color: #264348;
+  border-color: white; }
+
+.btn-primary:hover {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  background-color: white;
+  color: black; }
+
+i {
+  padding-left: 5px;
+  padding-right: 8px; }
+
+.no-margin {
+  margin: 0; }
+
+/* Top Ten Packages */
+.package-list-container {
+  color: white; }
+
+.package-container {
+  background-color: #424242;
+  border: 1px solid #ECF0F1; }
+
+.search {
+  padding-top: 10px; }
+
+.center-horiz {
+  margin-left: calc(25vw); }
+
+.center-vert {
+  margin-top: calc(35vh); }
+
+.col-xs-5 {
+  padding-top: 10px; }
+
+.icons {
+  /*margin-left: 40px;*/
+  margin-top: -5px;
+  float: right; }
+
+.rating {
+  font-size: 175%;
+  padding: 0 0.5em; }
+
+/*.rating > a {
+  text-decoration: none;
+}
+
+.rating .rating-highlight, .rating.rating-highlight:hover {
+  color: #F4914E;
+}
+
+.rating .rating-normal, .rating.rating-normal:hover {
+  color: #3C3C3C;
+}*/
+.commands {
+  overflow: auto;
+  height: 100px;
+  border: 1px black solid;
+  border-radius: 5px; }
+
+/*# sourceMappingURL=landing.styles.css.map */

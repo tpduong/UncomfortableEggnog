@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="assets/styles/styles.css">
+<!-- <link rel="stylesheet" href="assets/styles/landing/landing.styles.css"> -->
 <div class="row package-container" ng-controller='LandingPageCtrl as landing'>
-  <div class="col-md-12 package-container-title">
+  <div class="col-md-12 package-list-container">
     <h3 id="top-ten-title">Top Ten</h3>
       <div class="col-xs-4" ng-repeat="package in landing.packages | orderBy:'-average' track by $index">
       <package-info pkg="package" view="card"></package-info>

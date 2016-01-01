@@ -45,11 +45,14 @@ module.exports.getPackage = function (req, res) {
           };
 
           //check to see and return previous review if exists
-          for (var i = 0; i < sendObj.package.reviews.length; i++) {
-            if (JSON.stringify(sendObj.package.reviews[i].userId) ===
-              JSON.stringify(req.user._id)) {
-              sendObj.prevReview = sendObj.package.reviews[i];
-              break;
+          //and user is logged in
+          if (req.user) {
+            for (var i = 0; i < sendObj.package.reviews.length; i++) {
+              if (JSON.stringify(sendObj.package.reviews[i].userId) ===
+                JSON.stringify(req.user._id)) {
+                sendObj.prevReview = sendObj.package.reviews[i];
+                break;
+              }
             }
           }
           res.json(sendObj);

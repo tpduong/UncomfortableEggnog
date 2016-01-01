@@ -1,0 +1,109 @@
+@mixin fade-transition() {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+@mixin buttonReset() {
+  button {
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: button; /* for input */
+    -webkit-user-select: none; /* for button */
+       -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    input::-moz-focus-inner,
+    button::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+/*@mixin-fadeIn() {
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+}*/
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+
+@mixin animate($name, $duration, $iteration, $direction) {
+    -webkit-animation-duration: $duration;
+       -moz-animation-duration: $duration;
+         -o-animation-duration: $duration;
+            animation-duration: $duration;
+
+    -webkit-animation-iteration-count: $iteration;
+       -moz-animation-iteration-count: $iteration;
+         -o-animation-iteration-count: $iteration;
+            animation-iteration-count: $iteration;
+
+    -webkit-animation-name: $name;
+       -moz-animation-name: $name;
+         -o-animation-name: $name;
+            animation-name: $name;
+
+    -webkit-animation-direction: $direction;
+       -moz-animation-direction: $direction;
+         -o-animation-direction: $direction;
+            animation-direction: $direction;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+
+

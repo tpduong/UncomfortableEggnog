@@ -1,0 +1,68 @@
+@import 'color-palette';
+@import 'effects-mixins';
+
+
+/*Bootstrap Overrides*/
+/*.btn-primary, .btn-primary:focus {
+  @include fade-transition();
+  background-color: #264348;
+  border-color: $primary-font-color;
+}
+
+.btn-primary:hover {
+  @include fade-transition();
+  background-color: $primary-font-color;
+  color: black;
+}*/
+
+
+/*Main Container*/
+body {
+  background-color: $primary-background-color;
+}
+
+.main-content {
+  min-height: calc(100vh - 35px);
+}
+
+
+
+
+
+
+
+
+
+
+/*Footer*/
+#footer {
+  /*position: absolute;*/
+  /*bottom: 5px;*/
+  margin-top: 10px;
+  @include buttonReset();
+
+  button {
+    /*line-height: 30px;*/
+    padding: 20px;
+    text-align: center;
+    background-color: $third-background-color;
+    /*padding: 3px;*/
+    border: 2px solid $primary-background-color;
+    @include fade-transition();
+/*    a {
+      &:link, &:visited {
+        color: $secondary-font-color;
+      }*/
+    color: $secondary-font-color;
+    &:hover {
+      color: $primary-font-color;
+      text-decoration: none;
+    }
+    &:hover {
+      box-shadow: inset 0 0 0 2px $primary-font-color;
+    }
+  }
+}
+
+
+

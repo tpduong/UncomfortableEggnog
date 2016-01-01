@@ -1,3 +1,4 @@
+<!-- <link rel="stylesheet" href="../../../assets/styles/nav/navbar.styles.css"> -->
 <nav class="navbar navbar-default" ng-controller="NavCtrl">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -7,13 +8,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" ui-sref="main">Jarvis</a>
+      <a class="navbar-brand" ui-sref="main">
+        <i id="home-button" class="fa fa-home fa-2x"></i>
+      </a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-      <form ng-submit="search(term)" class="navbar-form navbar-left" style="width:65%" role="search">
-        <div class="col-md-10 search" style="padding:0;border-radius:0;">
-          <input style="width:75%;margin:0;border-margin:0;" ng-model="term" type="text" placeholder="Search Packages">
-          <button style="width:20%;margin:0;border-margin:0;">Submit</button>
+      <form ng-submit="search(term)" class="navbar-form navbar-left" role="search">
+        <div class="col-md-10 search">
+          <input ng-model="term" type="text" placeholder="Search Packages">
+          <button class="btn btn-secondary">Submit</button>
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">

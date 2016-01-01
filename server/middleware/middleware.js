@@ -24,7 +24,8 @@ module.exports = {
         }
       });
     } else {
-      res.redirect('/');
+      // res.redirect('/');
+      res.send("Not Logged In");
     }
   },
 
