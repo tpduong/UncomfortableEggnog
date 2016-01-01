@@ -73,31 +73,15 @@
 
       //check if action is an ARG
       if (action.indexOf(substring) > -1) {
-        var delPat = 'del="(?:.{1,5})"';
-        var casePat = 'case=(?:"upper"|"lower"|"proper")';
-        var quotePat = 'quote=(?:true|false)';
+        var _argSyntax = /<ARG\s*[a-zA-Z0-9+='"_\s\\\/%]*\/>/g;
 
-        var arg_pattern = '<ARG (' + delPat + '|' + casePat + '|' + quotePat + ')\\s?(' + delPat + '|' + casePat + '|' + quotePat + ')?\\s?(' + delPat + '|' + casePat + '|' + quotePat + ')?>';
-        var arg_re = new RegExp(arg_pattern);
+        var arg_re = new RegExp(_argSyntax);
         var match = action.match(arg_re);
 
         if (!match) {
           //show variable error
           self.fields.errorList.push(self.errorMessages.variable, self.errorMessages.del, self.errorMessages.cap, self.errorMessages.quote);
           return false;
-        } else {
-          for (var i = 0; i < match.length; i++) {
-            if (match[i] && match[i].indexOf("del=") === 0) {
-              var del = match[i].match(/"([^']+)"/)[1];
-              for (var i = 0; i < del.length; i++) {
-                if (allowedDel.indexOf(del[i]) === -1) {
-                  //show  del error
-                  self.fields.errorList.push(self.errorMessages.del);
-                  return false;
-                }
-              }
-            }
-          }
         }
       }
       return true;
