@@ -1,20 +1,37 @@
-<div class="row" ng-controller="PackageCtrl as package">
-  <div class="col-xs-8">
-    <h3>
-      {{package.info.title}}
-      <a ng-show="package.user.canEditPackage" class="name" ui-sref="editPackage({packageName: package.info.title})"><button>edit this package</button></a>
-    </h3>
-    <h5>{{package.info.description}}</h5>
-    <p>{{package.info.packageContents}}</p>
+<div class="package-view" ng-controller="PackageCtrl as package">
+  <div class="row">
+    <div class="col-xs-5">
+      <legend class="package-title">{{package.info.title}}
+        <span><a ng-show="package.user.canEditPackage" class="name edit-package" ui-sref="editPackage({packageName: package.info.title})"><span class="glyphicon glyphicon-pencil" aria-hidden="true"><button>edit</button></span></a></span>
+      </legend>
+      <h5>{{package.info.description}}</h5>
+    </div>
+    <div class="col-xs-2">
+      <span class="package-view-stars">
+        <stars type="view" max="5" score="package.getRating(package.info)*5"></stars>
+      </span>
+    </div>
+    <div class="col-xs-5 contact-info">
+      <h3 class="package-view-username"> created by:
+        <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
+      </h3>
+      <a class="package-view-email" href="mailto:{{package.user.email}}">
+        <p>{{package.user.email}}</p>
+      </a>
+      <p>{{package.user.website}}</p>
+    </div>
   </div>
-  <div class="col-xs-4">
-    <h3>
-      <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
-
-
-    </h3>
-    <p>{{package.user.email}}</p>
-    <p>{{package.user.website}}</p>
+  <div class="row">
+    <div class="command-list col-xs-8">
+      <h5 class="command-list-title">Core Commands: </h5>
+      <ul>
+        <li ng-repeat="command in package.info.packageContents
+        track by $index">
+          <span>command: {{command}}</span>
+          <span>action: {{command[$index]}}</span>
+        </li>
+      </ul>
+    </div>
   </div>
   <div>
     <div rating score=0 package="package.info" user="package.user"></div>
@@ -23,6 +40,6 @@
     </div>
   </div>
   <a href="/api/download/{{package.info._id}}">
-    <button type="button" class="btn btn-default">Download</button>
+    <button type="button" class="btn btn-primary">Download</button>
   </a>
 </div>

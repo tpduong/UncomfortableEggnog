@@ -3,12 +3,13 @@
   angular.module('app')
     .controller('PackageCtrl', PackageCtrl);
 
-  PackageCtrl.$inject = ["ApiFactory", "$state"];
+  PackageCtrl.$inject = ["ApiFactory", "$state", "PackageFactory"];
 
-  function PackageCtrl (ApiFactory, $state) {
+  function PackageCtrl (ApiFactory, $state, PackageFactory) {
     var self = this;
     var packageName = $state.params.packageName;
     var get = ApiFactory.get;
+    self.getRating;
     self.hello = packageName;
     self.user;
     var init = function () {
@@ -19,6 +20,7 @@
         }
         console.log(data);
         self.info = data.package;
+        self.getRating = PackageFactory.getRating;
         if (data.user) {
           self.user = data.user;
           self.user.prevReview = data.prevReview || null;

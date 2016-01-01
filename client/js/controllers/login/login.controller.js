@@ -12,14 +12,6 @@
         username: self.username,
         password: self.password
       }).then(function (result) {
-// <<<<<<< HEAD
-        // TODO: if err, show err, else redirect
-        // self.errorMessage = '';
-        // if (result.error) {
-          // otherwise password / default error;
-        // } else {
-          // $state.go('main');
-// =======
         self.errorMessage = '';
         self.username = '';
         self.password = '';

@@ -1,0 +1,68 @@
+@import '../color-palette';
+@import '../effects-mixins';
+@import '../nav/navbar.styles';
+
+@include buttonReset();
+
+div.package-view {
+  background-color: $secondary-background-color;
+  border: 1px solid #2e2e2e;
+  width: 60vw;
+}
+
+stars {
+  a {
+    padding: 0;
+    margin: 0;
+    i {
+      padding: 0 2px;
+      margin: 0;
+    }
+  }
+}
+
+.package-title {
+  color: $primary-font-color;
+  font-size: 35px;
+}
+
+.contact-info {
+  a {
+    color: $secondary-font-color;
+      &:hover {
+        cursor: pointer;
+        @include fade-transition();
+        color: $primary-font-color;
+        text-decoration: none;
+      }
+  }
+  .package-view-username {
+    font-size: 25px;
+  }
+  .package-view-email {
+  }
+}
+
+.btn-primary, .btn-primary:focus {
+  @include fade-transition();
+  background-color: #264348;
+  border-color: $primary-font-color;
+}
+
+.btn-primary:hover {
+  @include fade-transition();
+  background-color: $primary-font-color;
+  color: black;
+}
+
+.command-list {
+  position: relative;
+  padding: 10px;
+  margin: 15px;
+  border: 2px solid $primary-background-color;
+  background-color: #264348;
+  color: white;
+  .command-list-title {
+    text-align: center;
+  }
+}

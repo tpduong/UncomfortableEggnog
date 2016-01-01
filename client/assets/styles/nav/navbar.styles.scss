@@ -8,6 +8,7 @@
       a {
         color: $secondary-font-color;
         &:hover {
+          cursor: pointer;
           @include fade-transition();
           color: $primary-font-color;
         }

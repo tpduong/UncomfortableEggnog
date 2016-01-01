@@ -11,6 +11,7 @@ legend {
   color: $primary-font-color;
 }
 
+
 .form-container {
   position: relative;
   color: $primary-font-color;
@@ -21,6 +22,7 @@ legend {
   transform: translateX(20%);
   margin: 15px;
   background-color: $secondary-background-color;
+  border: $border-fade;
     width: 70%;
   .form-signup {
     color: black;
@@ -29,6 +31,7 @@ legend {
     background-color: white;
   }
 }
+
 
 fieldset {
   margin: 0;

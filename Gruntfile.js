@@ -19,6 +19,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'client/assets/styles/packages/package.styles.css': 'client/assets/styles/packages/package.styles.scss',
+          'client/assets/styles/packages/packageView.styles.css': 'client/assets/styles/packages/packageView.styles.scss',
           'client/assets/styles/landing/landing.styles.css': 'client/assets/styles/landing/landing.styles.scss',
           'client/assets/styles/rating/rating.styles.css': 'client/assets/styles/rating/rating.styles.scss',
           'client/assets/styles/nav/navbar.styles.css': 'client/assets/styles/nav/navbar.styles.scss',
