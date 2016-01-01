@@ -4,3 +4,4 @@ client/assets/vendor/
 server/config/authKeys.js
 .DS_Store
 *.css.map
+.sass-cache/

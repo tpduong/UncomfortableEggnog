@@ -70,7 +70,6 @@
     self.actionValidation = function (action) {
       var substring = "<ARG";
       var allowedDel = " _-*%+";
-
       //check if action is an ARG
       if (action.indexOf(substring) > -1) {
         var _argSyntax = /<ARG\s*[a-zA-Z0-9+='"_\s\\\/%]*\/>/g;
@@ -78,7 +77,7 @@
         var arg_re = new RegExp(_argSyntax);
         var match = action.match(arg_re);
 
-        if (!match) {
+        if (!match || action.match(/<ARG/g).length !== match.length) {
           //show variable error
           self.fields.errorList.push(self.errorMessages.variable, self.errorMessages.del, self.errorMessages.cap, self.errorMessages.quote);
           return false;
