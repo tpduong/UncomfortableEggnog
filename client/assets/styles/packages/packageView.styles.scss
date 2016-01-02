@@ -49,6 +49,7 @@ div.package-view {
 }
 
 .contact-info {
+  margin-bottom: 10px;
   a {
     color: $secondary-font-color;
       &:hover {
@@ -83,8 +84,7 @@ div.package-view {
   color: black;
 }
 
-.command-list {
-  position: relative;
+/*  position: relative;
   padding: 10px 0;
   margin: 26px;
   border: 1px solid $primary-font-color;
@@ -92,10 +92,9 @@ div.package-view {
   color: white;
   .command-list-title {
     text-align: center;
-  }
-}
+  }*/
 
-.review-container {
+.review-container, .command-list {
   margin-top: 10px;
   background-color: $third-background-color;
   .panel-heading {
@@ -114,6 +113,31 @@ div.package-view {
       background-color: #353535;
     }
   }
+}
+
+.command-table>thead>tr>th,
+.command-table tbody>tr>td {
+    padding-left: 15px !important;
+}
+
+.command-list {
+  .command-list-title: {
+  }
+  thead>tr>th, tbody>tr>td {
+    padding-left: 15px;
+  }
+  tbody tr:nth-child(2n+1) {
+    background-color:#353535;
+  }
+  tbody tr{
+    background-color:#6A6464;
+    .command {
+      padding-left: 15px;
+      margin-left:10px;
+
+    }
+}
+
 /*  .user-reviews {
     padding: 5px;
     border: 1px solid $primary-font-color;
@@ -137,6 +161,7 @@ div.package-view {
 }
 
 .package-view-desc {
+  height: 5vh;
   margin-left: 12px;
 }
 .review-submit {
