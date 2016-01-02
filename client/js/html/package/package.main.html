@@ -1,15 +1,21 @@
 <div class="package-view" ng-controller="PackageCtrl as package">
   <div class="row">
-    <div class="col-xs-5">
+    <div class="col-xs-7">
       <legend class="package-title">{{package.info.title}}
         <span><a ng-show="package.user.canEditPackage" class="name edit-package" ui-sref="editPackage({packageName: package.info.title})"><span class="glyphicon glyphicon-pencil" aria-hidden="true"><button>edit</button></span></a></span>
       </legend>
-      <h5>{{package.info.description}}</h5>
     </div>
-    <div class="col-xs-2">
-      <span class="package-view-stars">
+    <div class="col-xs-5">
+      <span class="package-view-stars" ng-if="package.info.totalStars > 0">
         <stars type="view" max="5" score="package.getRating(package.info)*5"></stars>
       </span>
+      <span class="package-view-stars" ng-if="package.info.totalStars === 0">(No Ratings Yet)
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-7 package-view-desc">
+      <h5>{{package.info.description}}</h5>
     </div>
     <div class="col-xs-5 contact-info">
       <h3 class="package-view-username"> created by:

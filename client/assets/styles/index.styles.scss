@@ -13,6 +13,16 @@ legend {
   color: $primary-font-color;
 }
 
+stars {
+  a:hover {
+    text-decoration: none;
+  }
+  &[type="view"] {
+    a:hover {
+      color: #337ab7;
+    }
+  }
+}
 
 /*.btn-primary, .btn-primary:focus {
   @include fade-transition();

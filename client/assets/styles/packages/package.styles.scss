@@ -22,7 +22,6 @@
 }
 
 .packageDetails.entry {
-  /*height: 120px;*/
   padding: 10px;
   a {
     img {
@@ -52,6 +51,13 @@
 }
 
 stars {
+/*
+  &.rate-stars {
+    a:hover {
+      color: #337ab7;
+      text-decoration: none;
+    }
+  }*/
   a {
     padding: 0;
     margin: 0;
@@ -92,3 +98,4 @@ a.download {
   margin-left: 10px;
   margin-bottom: 0;
 }
+

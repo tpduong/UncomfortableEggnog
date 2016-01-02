@@ -9,14 +9,24 @@ div.package-view {
   border: 1px solid #2e2e2e;
   width: 60vw;
 }
-
-stars {
-  a {
-    padding: 0;
-    margin: 0;
-    i {
-      padding: 0 2px;
+.package-view-stars{
+  display: inline-block;
+  height: 20px;
+  font-size: 25px;
+  stars {
+    a {
+      padding: 0;
       margin: 0;
+      &:hover {
+        color: #337ab7;
+        text-decoration: none;
+      }
+      i.fa {
+        padding: 0 2px;
+        margin: 0;
+
+      }
+
     }
   }
 }
@@ -24,8 +34,14 @@ stars {
 .package-title {
   color: $primary-font-color;
   font-size: 35px;
+  .edit-package {
+    font-size: 15px;
+  }
 }
-
+.package-view-desc {
+  padding: 0;
+  margin: 0;
+}
 .contact-info {
   a {
     color: $secondary-font-color;
