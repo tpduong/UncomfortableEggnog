@@ -12,7 +12,9 @@
         score: '=',
         review: '=review',
         packageEntry: '=package',
-        user: '='
+        user: '=',
+        msg: '=',
+        rated: '='
       }
     };
 
@@ -23,6 +25,7 @@
     function link (scope, elem, attrs) {
       scope.$watch('packageEntry', function (newValue, oldValue) {
         if (newValue !== oldValue) {
+          // console.log(scope.user);
           if (scope.user.prevReview) {
             scope.review = scope.user.prevReview.contents;
             scope.score = scope.user.prevReview.stars / scope.user.prevReview.totalStars * 5;
@@ -33,10 +36,13 @@
         }
       });
       scope.submitReview = function () {
+        console.log(localStorage);
         var id = scope.packageEntry._id;
         if (scope.user.canEditPackage) {
           //TODO: add visual display for this message
           console.log('cannot rate own package!');
+          scope.msg = 'You aren\'t allowed to rate your own packages.';
+          scope.rated = true;
           return;
         } else {
           var review = {
@@ -50,9 +56,13 @@
             scope.review = "";
             if (res === "Not Logged In") {
               $state.go('login');
+            } else if (scope.submitOrUpdateReview === 'Update') {
+              scope.msg = 'Your review has been updated!';
             } else {
-              console.log('updated or submitted:', res);
+              scope.msg = 'Your review has been submitted!';
             }
+              scope.rated = true;
+              console.log(scope, scope.rated);
           });
         }
       };

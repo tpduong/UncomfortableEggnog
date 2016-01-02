@@ -1,0 +1,183 @@
+@import '../color-palette';
+@import '../effects-mixins';
+@import '../nav/navbar.styles';
+@import '../signup/signup.styles';
+
+@include buttonReset();
+
+div.package-view {
+  width: 80%;
+  transform: translateX(10%);
+  @extend .form-container;
+}
+
+.package-view-stars {
+  display: inline-block;
+  height: 20px;
+  font-size: 25px;
+  stars {
+    margin: 0 5px 5px 5px;
+    padding-left: 5px;
+    a {
+      padding: 0;
+      margin: 0;
+      i.fa {
+        padding: 0 2px;
+        margin: 0;
+        color: $star-color;
+      }
+    }
+  }
+  &.downloads i {
+    font-size: 20px;
+    margin: 5px 0 0 0;
+    padding: 6px 10px 0 8px;
+    a:hover {
+      text-decoration: none;
+      color: red;
+    }
+  }
+}
+
+.package-title {
+  padding: 0 10px;
+  color: $primary-font-color;
+  font-size: 35px;
+  .edit-package {
+    font-size: 15px;
+  }
+}
+
+.contact-info {
+  margin-bottom: 10px;
+  a {
+    color: $secondary-font-color;
+      &:hover {
+        cursor: pointer;
+        @include fade-transition();
+        color: $primary-font-color;
+        text-decoration: none;
+      }
+  }
+  .package-view-contact {
+    padding: 5px 0 0 5px;
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    font-size: 15px;
+  }
+  .package-view-links {
+    margin: 0 0 0 10px;
+    padding: 0 0 0 5px;
+    @extend .package-view-contact;
+  }
+}
+
+.btn-primary, .btn-primary:focus {
+  @include fade-transition();
+  background-color: #264348;
+  border-color: $primary-font-color;
+}
+
+.btn-primary:hover {
+  @include fade-transition();
+  background-color: $primary-font-color;
+  color: black;
+}
+
+/*  position: relative;
+  padding: 10px 0;
+  margin: 26px;
+  border: 1px solid $primary-font-color;
+  background-color: #264348;
+  color: white;
+  .command-list-title {
+    text-align: center;
+  }*/
+
+.review-container, .command-list {
+  margin-top: 10px;
+  background-color: $third-background-color;
+  .panel-heading {
+    background-color: #264348;
+  }
+  legend {
+    margin-bottom: 0;
+    h5 {
+      color: $third-font-color;
+    }
+  }
+  .review {
+    padding: 5px;
+    .review-name, .review-contents {
+      padding: 5px;
+      background-color: #353535;
+    }
+  }
+}
+
+.command-table>thead>tr>th,
+.command-table tbody>tr>td {
+    padding-left: 15px !important;
+}
+
+.command-list {
+  .command-list-title: {
+  }
+  thead>tr>th, tbody>tr>td {
+    padding-left: 15px;
+  }
+  tbody tr:nth-child(2n+1) {
+    background-color:#353535;
+  }
+  tbody tr{
+    background-color:#6A6464;
+    .command {
+      padding-left: 15px;
+      margin-left:10px;
+
+    }
+}
+
+/*  .user-reviews {
+    padding: 5px;
+    border: 1px solid $primary-font-color;
+    border-top: none;
+  }*/
+  stars {
+    float: right;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    a {
+      padding: 0;
+      margin: 0;
+      i.fa {
+        padding: 0 2px;
+        margin: 0;
+        color: #337ab7;
+      }
+    }
+  }
+}
+
+.package-view-desc {
+  height: 5vh;
+  margin-left: 12px;
+}
+.review-submit {
+  padding: 5px;
+  margin: 10px 0 0 10px;
+  /*background-color: #264348;*/
+}
+
+@include fadeIn();
+
+.message-display {
+  /*@include fade-transition();*/
+  height: 3vh;
+  text-align: center;
+}
+
+.message-container {
+  margin-bottom: 500px;
+}
