@@ -6,7 +6,6 @@ var del = require('del');
 
 var writeSnippetFile = function (packageEntry, outFolder) {
   var body = JSON.stringify(packageEntry.packageContents);
-  console.log("write snippet file: ", body);
   var fileName = escape(packageEntry.title) + '.json';
   var filePath = outFolder + fileName;
   return mkpathAsync(outFolder).then(function () {
