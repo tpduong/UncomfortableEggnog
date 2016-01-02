@@ -1,0 +1,31 @@
+
+.form-container {
+  position: relative;
+
+  padding: 0 20px 20px 20px;
+  transform: translateX(20%);
+  margin: 15px;
+  background-color: #424242;
+  width: 70%;
+  height: 570px;
+  color: black;
+}
+
+.form-container .form-editUser {
+  padding: 20px;
+  margin: 15px;
+  background-color: white;
+  height: 470px;
+
+}
+
+.commands {
+  background-color: white;
+}
+
+legend {
+  font-size: 35px;
+  color: white;
+}
+
+
