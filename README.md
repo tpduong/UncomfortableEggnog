@@ -13,6 +13,7 @@
 1. [Usage](#Usage)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
+    1. [Requirements](#requirements)
 1. [Team](#team)
 1. [Contributing](#contributing)
 
@@ -33,11 +34,12 @@
 >
 >  - **command**: The phrase you tell Jarvis to execute the corresponding action
 >
->  - **action**: The shell script to be executed upon utterance of the corresponding command.  You can have zero, one, or multiple arguments in an action.  
+>  - **action**: The shell script to be executed upon utterance of the corresponding command.  You can have zero, one, or multiple arguments in an action.
 >    - Arguments must be in the following format: _< ARG del='+' quote=true case='proper' >_
 >     - del specifies the delimiter. RegExp: _'del="(?:.{1,5})"'_
 >     - quote specifies if the argument is surrounded by quotes.  Values can either be true or false. RegExp: _'quote=(?:true|false)'_
 >     - case specifies whether the argument is 'upper', 'lower' or 'proper' case. RegExp: _'case=(?:"upper"|"lower"|"proper")'_
+      - For multiple arguments use option chain=true and chainkey='_key_'
 >     - Example without argument:
 >     ```sh
 >     say $(date +'%r')
@@ -45,6 +47,11 @@
 >     - Example with argument:
 >      ```sh
 >      open <ARG del='\\ ' capitalize=true/>.app
+>      ```
+>
+>>     - Example with multiple arguments:
+>      ```sh
+>      sum=$((<ARG del='\' chain=true chainkey='and' />+<ARG del='\' />)) && say $sum
 >      ```
 >
 > - __Edit or Delete a package__
@@ -56,13 +63,17 @@
 >
 >
 > - __Add a review / Rate a package / Download a package__
-> To write a review, rate a package, or download a package to your
+> To write a review, rate a package, or download a package, click on the name of that package.  You can only review and rate a package once.  If you rate a package a second time, it will replace the first review and rating.
 
 > - __Further Instructions__
 > Visit our GitHub repo for Jarvis Voice Command Desktop Application for further instructions on how to use the desktop app.
 
 
 ## Development
+
+### Requirements
+- Node 0.10.x
+- MongoDB
 
 ### Installing Dependencies
 
