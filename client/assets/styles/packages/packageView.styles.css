@@ -269,15 +269,6 @@ div.package-view {
   background-color: white;
   color: black; }
 
-/*  position: relative;
-  padding: 10px 0;
-  margin: 26px;
-  border: 1px solid $primary-font-color;
-  background-color: #264348;
-  color: white;
-  .command-list-title {
-    text-align: center;
-  }*/
 .review-container, .command-list {
   margin-top: 10px;
   background-color: #242827; }
@@ -297,33 +288,27 @@ div.package-view {
 .command-table tbody > tr > td {
   padding-left: 15px !important; }
 
-.command-list {
-  /*  .user-reviews {
-      padding: 5px;
-      border: 1px solid $primary-font-color;
-      border-top: none;
-    }*/ }
-  .command-list thead > tr > th, .command-list tbody > tr > td {
-    padding-left: 15px; }
-  .command-list tbody tr:nth-child(2n+1) {
-    background-color: #353535; }
-  .command-list tbody tr {
-    background-color: #6A6464; }
-    .command-list tbody tr .command {
-      padding-left: 15px;
-      margin-left: 10px; }
-  .command-list stars {
-    float: right;
-    font-size: 10px;
-    margin: 0;
-    padding: 0; }
-    .command-list stars a {
-      padding: 0;
-      margin: 0; }
-      .command-list stars a i.fa {
-        padding: 0 2px;
-        margin: 0;
-        color: #337ab7; }
+.command-list thead > tr > th, .command-list tbody > tr > td {
+  padding-left: 15px; }
+.command-list tbody tr:nth-child(2n+1) {
+  background-color: #353535; }
+.command-list tbody tr {
+  background-color: #6A6464; }
+  .command-list tbody tr .command {
+    padding-left: 15px;
+    margin-left: 10px; }
+.command-list stars {
+  float: right;
+  font-size: 10px;
+  margin: 0;
+  padding: 0; }
+  .command-list stars a {
+    padding: 0;
+    margin: 0; }
+    .command-list stars a i.fa {
+      padding: 0 2px;
+      margin: 0;
+      color: #337ab7; }
 
 .package-view-desc {
   height: 5vh;
@@ -331,8 +316,7 @@ div.package-view {
 
 .review-submit {
   padding: 5px;
-  margin: 10px 0 0 10px;
-  /*background-color: #264348;*/ }
+  margin: 10px 0 0 10px; }
 
 .fadein,
 .fadeout {
@@ -352,7 +336,6 @@ div.package-view {
   /*display: block !important;*/ }
 
 .message-display {
-  /*@include fade-transition();*/
   height: 3vh;
   text-align: center; }
 

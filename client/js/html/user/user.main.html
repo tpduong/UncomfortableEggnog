@@ -2,7 +2,7 @@
   <!-- <div class="row"> -->
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="col-md-4 user-info">
+        <div class="col-md-2 user-info">
           <h3 class="username">{{uc.fields.username}}
           </h3>
           <span class="edit-user">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="row-fluid">
-        <div class="col-md-8 contact-info user-info">
+        <div class="col-md-10 contact-info user-info">
           <div class="row-fluid">
             <h5 class="package-view-contact">{{uc.fields.fullname}}</h5>
           </div>
@@ -27,28 +27,34 @@
             <a>
               <h5 class="package-view-links link-website" ng-href="{{uc.fields.website}}">{{uc.fields.website}}</h5>
             </a>
-            <!-- <div ng-show="uc.fields.canEditProfile">
-            <p></p>
-              <button ui-sref="editUser({userName: uc.fields.username})">Edit My Profile</button>
-            </div> -->
           </div>
         </div>
       </div>
     </div>
-  <!-- </div> -->
-  <div class="container-fluid">
 
-  <div class="row-fluid">
-    <hr>
-    <h4 ng-show="uc.fields.numPackages">{{uc.fields.numPackages}}</h4>
-    <div ng-show="uc.fields.canEditPackages">
-      <button ui-sref="createPackage({})">Create A Package</button>
+  <hr>
+    <div class="row package-list-title">
+      <div class="col-md-9">
+        <h4 ng-show="uc.fields.numPackages">{{uc.fields.numPackages}}</h4>
+      </div>
+<!--       <div ng-show="uc.fields.canEditPackages" class="col-md-2">
+        <button ui-sref="createPackage({})">Create A Package</button>
+      </div> -->
+      <span ng-show="uc.fields.canEditPackages" class="col-md-3 btn-package-create">
+        <a ui-sref="createPackage({})"><i class="fa fa-plus fa-2x"></i></a>
+      </span>
     </div>
-    <p></p>
+      <p></p>
     <!-- <div class="col-xs-4" ng-repeat="package in uc.fields.packages"> -->
+  <!-- <div class="row"> -->
+    <!-- <div class="col-md-12"> -->
+
       <package-info ng-repeat="package in uc.fields.packages" pkg="package"></package-info>
-    <!-- </div> -->
-  </div>
+<!--           <span class="span4 package-view-stars downloads">
+            <a href="/api/download/{{package.info._id}}">
+              <i class="fa fa-download"></i>
+            </a>({{package.info.downloads}})
+          </span>   -->
   </div>
 </div>
 

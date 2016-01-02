@@ -23,6 +23,7 @@
         }
         // console.log(data);
         self.info = data.package;
+        console.log(self.info);
         self.getRating = PackageFactory.getRating;
         if (data.user) {
           self.user = data.user;
