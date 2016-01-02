@@ -1,0 +1,72 @@
+@import '../packages/packageView.styles';
+/*@import '../color-palette';*/
+/*@import '../effects-mixins';*/
+
+div.user-main {
+  @extend div.package-view;
+}
+
+.username {
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.user-info {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+span.edit-user {
+  a {
+    /*margin-left: 15px;*/
+    font-size: 13px;
+    color: $secondary-font-color;
+    .glyphicon {
+      margin-right: 5px;
+    }
+    &:hover, &:focus {
+      @include fade-transition();
+      color: $primary-font-color;
+    }
+  }
+}
+
+.contact-info {
+  text-align: right;
+  margin-bottom: 10px;
+  a, .link-website {
+    color: $secondary-font-color;
+    &:hover {
+      cursor: pointer;
+      @include fade-transition();
+      color: $primary-font-color;
+      text-decoration: none;
+    }
+  }
+  .package-view-contact {
+    padding: 5px 0 0 5px;
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    font-size: 15px;
+  }
+  .package-view-links {
+    margin: 0 0 0 10px;
+    padding: 0 0 0 5px;
+    @extend .package-view-contact;
+  }
+}
+div.package-list-title {
+  padding-left: 10px;
+  padding-bottom: 0;
+  h4 {
+    margin-bottom: 4px;
+  }
+}
+
+span.btn-package-create {
+  text-align: right;
+  float: right;
+  a {
+    @include fade-transition();
+  }
+}

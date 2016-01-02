@@ -23,6 +23,7 @@
         }
         // console.log(data);
         self.info = data.package;
+        console.log(self.info);
         self.getRating = PackageFactory.getRating;
         if (data.user) {
           self.user = data.user;
@@ -33,6 +34,7 @@
         }
         $scope.$watch('rated', function (newValue, oldValue) {
           if (newValue) {
+            init();
             $timeout(function () {
               $scope.rated = false;
             }, 3000);

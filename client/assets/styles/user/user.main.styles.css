@@ -158,7 +158,7 @@ legend {
   font-size: 35px;
   color: white; }
 
-.form-container, div.package-view {
+.form-container, div.package-view, div.user-main {
   position: relative;
   color: white;
   border-radius: 2px;
@@ -168,7 +168,7 @@ legend {
   background-color: #424242;
   border: 1px solid #2e2e2e;
   width: 70%; }
-  .form-container .form-signup, div.package-view .form-signup {
+  .form-container .form-signup, div.package-view .form-signup, div.user-main .form-signup {
     color: black;
     padding: 20px;
     margin: 10px;
@@ -199,7 +199,7 @@ button::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-div.package-view {
+div.package-view, div.user-main {
   width: 80%;
   transform: translateX(10%); }
 
@@ -342,4 +342,64 @@ div.package-view {
 .message-container {
   margin-bottom: 500px; }
 
-/*# sourceMappingURL=packageView.styles.css.map */
+/*@import '../color-palette';*/
+/*@import '../effects-mixins';*/
+.username {
+  margin-top: 10px;
+  padding-left: 0; }
+
+.user-info {
+  padding-left: 0;
+  padding-right: 0; }
+
+span.edit-user a {
+  /*margin-left: 15px;*/
+  font-size: 13px;
+  color: #8DF2E2; }
+  span.edit-user a .glyphicon {
+    margin-right: 5px; }
+  span.edit-user a:hover, span.edit-user a:focus {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    color: white; }
+
+.contact-info {
+  text-align: right;
+  margin-bottom: 10px; }
+  .contact-info a, .contact-info .link-website {
+    color: #8DF2E2; }
+    .contact-info a:hover, .contact-info .link-website:hover {
+      cursor: pointer;
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      -o-transition: all 0.30s ease-in-out;
+      color: white;
+      text-decoration: none; }
+  .contact-info .package-view-contact, .contact-info .package-view-links {
+    padding: 5px 0 0 5px;
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    font-size: 15px; }
+  .contact-info .package-view-links {
+    margin: 0 0 0 10px;
+    padding: 0 0 0 5px; }
+
+div.package-list-title {
+  padding-left: 10px;
+  padding-bottom: 0; }
+  div.package-list-title h4 {
+    margin-bottom: 4px; }
+
+span.btn-package-create {
+  text-align: right;
+  float: right; }
+  span.btn-package-create a {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out; }
+
+/*# sourceMappingURL=user.main.styles.css.map */
