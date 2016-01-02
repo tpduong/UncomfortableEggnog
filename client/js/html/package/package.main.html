@@ -1,12 +1,17 @@
 <div class="package-view" ng-controller="PackageCtrl as package">
   <div class="row">
-    <!-- column one -->
+    <!-- row one: title, metadata-->
     <div class="col-sm-7">
-        <!-- title -->
+      <!-- title -->
       <div class="row">
-
         <legend class="package-title">{{package.info.title}}
-          <span><a ng-show="package.user.canEditPackage" class="name edit-package" ui-sref="editPackage({packageName: package.info.title})"><span class="glyphicon glyphicon-pencil" aria-hidden="true"><button>edit</button></span></a></span>
+          <span>
+            <a ng-show="package.user.canEditPackage" class="name edit-package" ui-sref="editPackage({packageName: package.info.title})">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true">
+                <button>edit</button>
+              </span>
+            </a>
+          </span>
         </legend>
       </div>
       <!-- description -->
@@ -15,97 +20,105 @@
           <h5>{{package.info.description}}</h5>
         </div>
       </div>
-      <!-- list of package commands -->
-      <div class="container-fluid">
-        <div class="row row-fluid">
-          <div class="command-list span11 panel panel-default">
-            <legend class="panel-heading">
-              <h5 class="command-list-title panel-title">Core Commands: </h5>
-            </legend>
-            <table class="table command-table table-inverse">
-              <thead>
-                <tr>
-                  <th>Command</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="(command, action) in package.info.packageContents" class="command">
-                  <td>{{command}}</td>
-                  <td>{{action}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- column two -->
-    <div class="col-sm-5">
       <!-- stars -->
+    <div class="col-sm-5">
       <div class="container-fluid">
         <div class="row row-fluid">
           <span class="package-view-stars span8" ng-if="package.info.totalStars > 0">
             <stars type="view" max="5" score="package.getRating(package.info)*5"></stars>
             <span>({{package.info.reviews.length}})</span>
           </span>
-        <span class="package-view-stars span8" ng-if="package.info.totalStars === 0">(No Ratings Yet)
-        </span>
-        <span class="span4 package-view-stars downloads">
-          <a href="/api/download/{{package.info._id}}">
-            <i class="fa fa-download"></i>
-          </a>({{package.info.downloads}})
-        </span>
-      </div>
-    </div>
+          <span class="package-view-stars span8" ng-if="package.info.totalStars === 0">(No Ratings Yet)
+          </span>
+        <!-- download link / num downloads -->
+          <span class="span4 package-view-stars downloads">
+            <a href="/api/download/{{package.info._id}}">
+              <i class="fa fa-download"></i>
+            </a>({{package.info.downloads}})
+          </span>
+        </div>
       <!-- contact info -->
-    <div class="contact-info">
-      <div class="row">
-        <div class="col-xs-12">
-          <!-- owner username -->
-          <h5 class="package-view-contact"> created by:
-            <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
-          </h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <!-- owner email -->
-          <h5 class="package-view-links">email:
-            <a href="mailto:{{package.user.email}}">
-            {{package.user.email}}
-            </a>
-          </h5>
-        </div>
-      </div>
-      <div class="row">
-        <!-- owner website -->
-        <div ng-if="package.user.website" class="col-xs-12">  <h5 class="package-view-links">website:
-            <a href="package.user.website">
-              {{package.user.website}}
-            </a>
-          </h5>
-        </div>
-      </div>
-    </div>
-        <!-- user reviews -->
-    <div class="row">
-      <div class="review-container panel panel-default" ng-show="package.info.totalStars">
-        <legend class="panel-heading">
-          <h5 class="panel-title">Reviews</h5>
-        </legend>
-        <!-- <div class="user-reviews"> -->
-          <div ng-repeat="review in package.info.reviews track by $index" class="review">
-              <div class="review-name">
-                <a ui-sref="user({userName: review.username})"><span>{{review.username}}:</span>
+        <div class="contact-info">
+          <div class="row row-fluid">
+            <div class="col-xs-12">
+              <!-- owner username -->
+              <h5 class="package-view-contact"> created by:
+                <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
+              </h5>
+            </div>
+          </div>
+          <div class="row row-fluid">
+            <div class="col-xs-12">
+              <!-- owner email -->
+              <h5 class="package-view-links">email:
+                <a href="mailto:{{package.user.email}}">
+                {{package.user.email}}
                 </a>
-              <span><stars type="view" max="5" score="review.stars / review.totalStars*5"></stars></span>
-              </div>
-            <p class="panel-body review-contents" ng-show="review.contents">{{review.contents}}</p>
+              </h5>
+            </div>
+          </div>
+          <div class="row row-fluid">
+            <!-- owner website -->
+            <div ng-if="package.user.website" class="col-xs-12">
+              <h5 class="package-view-links">website:
+                <a href="package.user.website">
+                  {{package.user.website}}
+                </a>
+              </h5>
+            </div>
           </div>
         </div>
-        <!-- </div> -->
       </div>
+    </div>
+  </div>
+  <!-- row two: commands list, reviews list -->
+  <div class="row">
+    <div class="col-sm-7">
+      <!-- list of package commands -->
+        <div class="container-fluid">
+          <div class="row row-fluid">
+            <div class="command-list span11 panel panel-default">
+              <legend class="panel-heading">
+                <h5 class="command-list-title panel-title">Core Commands: </h5>
+              </legend>
+              <table class="table command-table table-inverse">
+                <thead>
+                  <tr>
+                    <th>Command</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="(command, action) in package.info.packageContents" class="command">
+                    <td>{{command}}</td>
+                    <td>{{action}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <!-- user reviews -->
+      <div class="row">
+        <div class="review-container panel panel-default" ng-show="package.info.totalStars">
+          <legend class="panel-heading">
+            <h5 class="panel-title">Reviews</h5>
+          </legend>
+          <!-- <div class="user-reviews"> -->
+            <div ng-repeat="review in package.info.reviews track by $index" class="review">
+                <div class="review-name">
+                  <a ui-sref="user({userName: review.username})"><span>{{review.username}}:</span>
+                  </a>
+                <span><stars type="view" max="5" score="review.stars / review.totalStars*5"></stars></span>
+                </div>
+              <p class="panel-body review-contents" ng-show="review.contents">{{review.contents}}</p>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
       <div class="row">
         <h5 class="review-submit col-md-11">Submit your review</h5>
       </div>
@@ -115,3 +128,4 @@
     </div>
   </div>
 </div>
+  <!-- </div> -->
