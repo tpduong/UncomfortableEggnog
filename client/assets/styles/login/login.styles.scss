@@ -1,0 +1,14 @@
+@import '../signup/signup.styles';
+@import '../effects-mixins';
+
+form.login-form {
+  @extend .form-container;
+  height: 200px;
+}
+
+@include fadeIn();
+
+.login-error {
+  color: $secondary-font-color;
+}
+
