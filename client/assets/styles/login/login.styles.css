@@ -1,5 +1,7 @@
 /*$star-color: #ff0080;*/
 /*packages*/
+/*$star-color: #ff0080;*/
+/*packages*/
 body {
   background-color: #141414; }
 
@@ -88,4 +90,54 @@ i {
   border: 1px black solid;
   border-radius: 5px; }
 
-/*# sourceMappingURL=landing.styles.css.map */
+body {
+  height: 100%; }
+
+legend {
+  font-size: 35px;
+  color: white; }
+
+.form-container, form.login-form {
+  position: relative;
+  color: white;
+  border-radius: 2px;
+  padding: 0 20px 20px 20px;
+  transform: translateX(20%);
+  margin: 15px;
+  background-color: #424242;
+  border: 1px solid #2e2e2e;
+  width: 70%; }
+  .form-container .form-signup, form.login-form .form-signup {
+    color: black;
+    padding: 20px;
+    margin: 10px;
+    background-color: white; }
+
+fieldset {
+  margin: 0;
+  width: 100%; }
+
+form.login-form {
+  height: 200px; }
+
+.fadein,
+.fadeout {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s; }
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  /*display: block !important;*/ }
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  /*display: block !important;*/ }
+
+.login-error {
+  color: #8DF2E2; }
+
+/*# sourceMappingURL=login.styles.css.map */

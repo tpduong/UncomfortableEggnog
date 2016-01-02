@@ -46,7 +46,7 @@ i {
 .package-list-container {
   color: white; }
 
-.package-container {
+.package-container, .search-results {
   background-color: #424242;
   border: 1px solid #ECF0F1; }
 
@@ -88,4 +88,10 @@ i {
   border: 1px black solid;
   border-radius: 5px; }
 
-/*# sourceMappingURL=landing.styles.css.map */
+.search-results {
+  /*background-color: $secondary-background-color;
+  border: 1px solid #ECF0F1;*/
+  padding: 15px;
+  height: 80vh; }
+
+/*# sourceMappingURL=search.styles.css.map */

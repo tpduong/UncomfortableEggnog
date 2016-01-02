@@ -1,15 +1,13 @@
+<link rel="stylesheet" href="../../assets/styles/createPackage/createPackage.styles.css">
 <div ng-controller="PackageCreateCtrl as pk">
-
-  <form name="newPackageForm" novalidate>
-    <div class="col-md-12 form-group">
-      <div class="col-md-9">
-        <h4>Create New Package</h4>
-      </div>
-    </div>
+  <div class="form-container">
+    <legend>Create New Package</legend>
+    <form class="form-packageCreate" name="newPackageForm" novalidate>
 
     <!-- Title -->
     <div class="col-md-12 form-group">
       <div class="col-md-9" ng-class="{'has-error': pk.isInputInvalid(newPackageForm['title']), 'has-success': pk.isInputValid(newPackageForm['title'])}">
+      <label class="control-label" >Title*</label>
         <input ng-model="pk.fields.title" id="title" name="title" type="text" placeholder="Title*"
           class="form-control input-md required" ng-maxlength="15" ng-pattern="/^[A-Za-z0-9 ]+$/" required>
       </div>
@@ -26,6 +24,7 @@
     <!-- Description -->
     <div class="col-md-12 form-group">
       <div class="col-md-9">
+          <label class="control-label" >Description*</label>
           <input type="text" placeholder="Description*" name="description" class="form-control input-md required" ng-model="pk.fields.description" ng-maxlength="100" required>
       </div>
       <div class="col-md-12">
@@ -37,7 +36,7 @@
     <!-- where command : action  key:value are displayed after being added-->
     <div class="col-md-12 form-group">
       <div class="col-md-9">
-        <p>Package Content *:</p>
+        <label class="control-label">Package Content *:</label>
         <div class="col-md-12 commands">
         <div ng-repeat="command in pk.fields.commands">
           <div class="displayedCommand">
@@ -83,4 +82,5 @@
 
     </div>
   </form>
+  </div>
 </div>

@@ -3,6 +3,35 @@
 
 
 /*Bootstrap Overrides*/
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: $primary-font-color;
+}
+
+legend {
+  font-size: 35px;
+  color: $primary-font-color;
+}
+
+a {
+  color: $secondary-font-color;
+}
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: $primary-font-color;
+}
+
+stars {
+/*  a:hover {
+    text-decoration: none;
+  }*/
+  &[type="view"] {
+    a:hover {
+      color: #337ab7;
+    }
+  }
+}
+
 /*.btn-primary, .btn-primary:focus {
   @include fade-transition();
   background-color: #264348;

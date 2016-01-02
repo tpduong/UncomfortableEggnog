@@ -1,15 +1,13 @@
+<link rel="stylesheet" href="../../assets/styles/editPackage/editPackage.styles.css">
 <div ng-controller="EditPackageCtrl as edit">
-
-  <form name="newPackageForm" novalidate>
-    <div class="col-md-12 form-group">
-      <div class="col-md-9">
-        <h4>Edit {{edit.fields.originalTitle}} Package</h4>
-      </div>
-    </div>
+ <div class="form-container">
+    <legend>Edit {{edit.fields.originalTitle}} Package</legend>
+  <form class="form-editPackage" name="newPackageForm" novalidate>
 
     <!-- Title -->
     <div class="col-md-12 form-group">
       <div class="col-md-9" ng-class="{'has-error': edit  .isInputInvalid(newPackageForm['title']), 'has-success': edit.isInputValid(newPackageForm['title'])}">
+      <label class="control-label" >Title*</label>
         <input ng-model="edit.fields.title" id="title" name="title" type="text" placeholder="Title*"
           class="form-control input-md required" ng-maxlength="15" ng-pattern="/^[A-Za-z0-9 ]+$/" required>
       </div>
@@ -26,6 +24,7 @@
     <!-- Description -->
     <div class="col-md-12 form-group">
       <div class="col-md-9">
+      <label class="control-label" >Description*</label>
           <input type="text" placeholder="Description*" name="description" class="form-control input-md required" ng-model="edit.fields.description" ng-maxlength="100" required>
       </div>
       <div class="col-md-12">
@@ -37,7 +36,7 @@
     <!-- where command : action  key:value are displayed after being added-->
     <div class="col-md-12 form-group">
       <div class="col-md-9">
-        <p>Package Content *:</p>
+        <label>Package Content *:</label>
         <div class="col-md-12 commands">
         <div ng-repeat="command in edit.fields.commands">
           <div class="displayedCommand">
@@ -71,7 +70,7 @@
 
     <!--submit package -->
     <div class="col-md-12">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <span><input ng-click="edit.validateAndPost()" type="submit"  value="Submit Package" class="btn btn-success"></span>
         <span><input ng-click="edit.deletePackage()" type="submit" value="Delete Package" class="btn btn-success"></span>
       </div>
@@ -84,5 +83,6 @@
 
     </div>
   </form>
+  </div>
 </div>
 

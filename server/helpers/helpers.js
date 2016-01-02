@@ -138,6 +138,7 @@ exports.savePackage = function (user, entry, cb) {
           console.log('Error saving package.' + err);
           cb(err);
         } else {
+          console.log(entry);
           cb(null, entry);
         }
       });
