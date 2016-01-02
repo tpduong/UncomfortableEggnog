@@ -34,6 +34,7 @@
       <div class="row">
         <span class="package-view-stars col-xs-8" ng-if="package.info.totalStars > 0">
           <stars type="view" max="5" score="package.getRating(package.info)*5"></stars>
+          <span>({{package.info.reviews.length}})
         </span>
         <span class="package-view-stars" ng-if="package.info.totalStars === 0">(No Ratings Yet)
         </span>
@@ -42,36 +43,52 @@
       <div class="contact-info">
         <div class="row">
           <div class="col-xs-8">
-            <!-- package owner username -->
+            <!-- owner username -->
             <h5 class="package-view-username"> created by:
               <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
             </h5>
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-8">
+          <div class="col-xs-8 package-view-links">email:
+            <!-- owner email -->
             <a class="package-view-links" href="mailto:{{package.user.email}}">
               {{package.user.email}}
             </a>
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-8">
+          <!-- owner website -->
+          <div ng-if="package.user.website" class="col-xs-8">website:
             <a class="package-view-links">
               {{package.user.website}}
             </a>
           </div>
         </div>
+        <!-- user reviews -->
+        <div class="row">
+          <div class="review-container panel panel-default">
+            <legend class="panel-heading"><h5 class="panel-title">Reviews</h5></legend>
+            <!-- <div class="user-reviews"> -->
+              <div ng-repeat="review in package.info.reviews track by $index" class="review">
+                  <div class="review-name">
+                    <a ui-sref="user({userName: review.username})"><span>{{review.username}}:</span>
+                    </a>
+                  <span><stars type="view" max="5" score="review.stars / review.totalStars*5"></stars></span>
+                  </div>
+                <p class="panel-body review-contents" ng-show="review.contents">{{review.contents}}</p>
+              </div>
+            </div>
+          <!-- </div> -->
+        </div>
+        <div class="row">Submit your review
+          <div rating score=0 package="package.info" user="package.user">
+          </div>
+        </div>
+        </div>
       </div>
-    </div>
+    <a href="/api/download/{{package.info._id}}">
+      <button type="button" class="btn btn-primary">Download</button>
+    </a>
   </div>
-  <div>
-    <div rating score=0 package="package.info" user="package.user"></div>
-    <div ng-repeat="review in package.info.reviews track by $index">
-      <p>{{review.contents}}<span><stars type="view" max="5" score="review.stars / review.totalStars*5"></stars></span></p>
-    </div>
-  </div>
-  <a href="/api/download/{{package.info._id}}">
-    <button type="button" class="btn btn-primary">Download</button>
-  </a>
 </div>
