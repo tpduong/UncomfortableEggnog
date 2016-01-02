@@ -107,7 +107,6 @@
           <legend class="panel-heading">
             <h5 class="panel-title">Reviews</h5>
           </legend>
-          <!-- <div class="user-reviews"> -->
             <div ng-repeat="review in package.info.reviews track by $index" class="review">
                 <div class="review-name">
                   <a ui-sref="user({userName: review.username})"><span>{{review.username}}:</span>
@@ -117,15 +116,16 @@
               <p class="panel-body review-contents" ng-show="review.contents">{{review.contents}}</p>
             </div>
           </div>
-          <!-- </div> -->
         </div>
       <div class="row">
         <h5 class="review-submit col-md-11">Submit your review</h5>
       </div>
       <div class="row">
-        <div rating score=0 package="package.info" user="package.user"></div>
+        <div rating score=0 package="package.info" user="package.user" msg="package.msg" rated="rated"></div>
       </div>
     </div>
   </div>
+  <div class="row message-display">
+    <p class="fadein fadeout" ng-show="rated">{{package.msg}}</p>
+  </div>
 </div>
-  <!-- </div> -->

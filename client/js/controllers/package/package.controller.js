@@ -3,15 +3,18 @@
   angular.module('app')
     .controller('PackageCtrl', PackageCtrl);
 
-  PackageCtrl.$inject = ["ApiFactory", "$state", "PackageFactory"];
+  PackageCtrl.$inject = ["ApiFactory", "$state", "$scope", "$timeout", "PackageFactory"];
 
-  function PackageCtrl (ApiFactory, $state, PackageFactory) {
+  function PackageCtrl (ApiFactory, $state, $scope, $timeout, PackageFactory) {
     var self = this;
     var packageName = $state.params.packageName;
     var get = ApiFactory.get;
     self.getRating;
     self.hello = packageName;
     self.user;
+    self.msg = '';
+    $scope.rated = false;
+
     var init = function () {
       get('/api/package/' + packageName)
       .then(function (data) {
@@ -28,9 +31,15 @@
             self.user.canEditPackage = true;
           }
         }
+        $scope.$watch('rated', function (newValue, oldValue) {
+          if (newValue) {
+            $timeout(function () {
+              $scope.rated = false;
+            }, 3000);
+          }
+        });
       });
     };
-
     init();
   }
 })();

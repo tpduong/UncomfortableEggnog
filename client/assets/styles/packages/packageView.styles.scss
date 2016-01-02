@@ -169,3 +169,15 @@ div.package-view {
   margin: 10px 0 0 10px;
   /*background-color: #264348;*/
 }
+
+@include fadeIn();
+
+.message-display {
+  /*@include fade-transition();*/
+  height: 3vh;
+  text-align: center;
+}
+
+.message-container {
+  margin-bottom: 500px;
+}
