@@ -13,10 +13,14 @@ legend {
   color: $primary-font-color;
 }
 
+a:hover, a:focus, a:active {
+  text-decoration: none;
+}
+
 stars {
-  a:hover {
+/*  a:hover {
     text-decoration: none;
-  }
+  }*/
   &[type="view"] {
     a:hover {
       color: #337ab7;

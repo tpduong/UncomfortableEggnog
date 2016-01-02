@@ -54,6 +54,7 @@
               $state.go('login');
             } else {
               console.log('updated or submitted:', res);
+              console.log(scope);
             }
           });
         }

@@ -41,7 +41,9 @@
         <span class="package-view-stars span8" ng-if="package.info.totalStars === 0">(No Ratings Yet)
         </span>
         <span class="span4 package-view-stars downloads">
-          <i class="fa fa-download"></i>({{package.info.downloads}})
+          <a href="/api/download/{{package.info._id}}">
+            <i class="fa fa-download"></i>
+          </a>({{package.info.downloads}})
         </span>
       </div>
     </div>
@@ -76,8 +78,10 @@
         </div>
         <!-- user reviews -->
         <div class="row">
-          <div class="review-container panel panel-default">
-            <legend class="panel-heading"><h5 class="panel-title">Reviews</h5></legend>
+          <div class="review-container panel panel-default" ng-show="package.info.totalStars">
+            <legend class="panel-heading">
+              <h5 class="panel-title">Reviews</h5>
+            </legend>
             <!-- <div class="user-reviews"> -->
               <div ng-repeat="review in package.info.reviews track by $index" class="review">
                   <div class="review-name">
@@ -90,14 +94,17 @@
             </div>
           <!-- </div> -->
         </div>
-        <div class="row"><h5>Submit your review</h5>
+        <div class="row">
+          <h5 class="review-submit col-md-11">Submit your review</h5>
+        </div>
+        <div class="row">
           <div rating score=0 package="package.info" user="package.user">
+        </div>
           </div>
         </div>
-        </div>
       </div>
-    <a href="/api/download/{{package.info._id}}">
-      <button type="button" class="btn btn-primary">Download</button>
-    </a>
+    <!-- <a href="/api/download/{{package.info._id}}"> -->
+      <!-- <button type="button" class="btn btn-primary">Download</button> -->
+    <!-- </a> -->
   </div>
 </div>

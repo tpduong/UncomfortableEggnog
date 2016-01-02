@@ -18,7 +18,7 @@
         if (data === "Not Found") {
           $state.go('login');
         }
-        console.log(data);
+        // console.log(data);
         self.info = data.package;
         self.getRating = PackageFactory.getRating;
         if (data.user) {

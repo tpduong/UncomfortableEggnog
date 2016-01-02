@@ -32,6 +32,10 @@ div.package-view {
     font-size: 20px;
     margin: 5px 0 0 0;
     padding: 6px 10px 0 8px;
+    a:hover {
+      text-decoration: none;
+      color: red;
+    }
   }
 }
 
@@ -82,7 +86,7 @@ div.package-view {
 .command-list {
   position: relative;
   padding: 10px 0;
-  margin: 15px;
+  margin: 26px;
   border: 1px solid $primary-font-color;
   background-color: #264348;
   color: white;
@@ -106,6 +110,7 @@ div.package-view {
   .review {
     padding: 5px;
     .review-name, .review-contents {
+      padding: 5px;
       background-color: #353535;
     }
   }
@@ -131,3 +136,11 @@ div.package-view {
   }
 }
 
+.package-view-desc {
+  margin-left: 12px;
+}
+.review-submit {
+  padding: 5px;
+  margin: 10px 0 0 10px;
+  /*background-color: #264348;*/
+}
