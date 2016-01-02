@@ -28,9 +28,15 @@ div.package-view {
       }
     }
   }
+  &.downloads i {
+    font-size: 20px;
+    margin: 5px 0 0 0;
+    padding: 6px 10px 0 8px;
+  }
 }
 
 .package-title {
+  padding: 0 10px;
   color: $primary-font-color;
   font-size: 35px;
   .edit-package {
@@ -48,7 +54,7 @@ div.package-view {
         text-decoration: none;
       }
   }
-  .package-view-username {
+  .package-view-contact {
     padding: 5px 0 0 5px;
     margin: 10px 0 0 10px;
     display: inline-block;
@@ -57,7 +63,7 @@ div.package-view {
   .package-view-links {
     margin: 0 0 0 10px;
     padding: 0 0 0 5px;
-    @extend .package-view-username;
+    @extend .package-view-contact;
   }
 }
 
@@ -75,7 +81,7 @@ div.package-view {
 
 .command-list {
   position: relative;
-  padding: 10px;
+  padding: 10px 0;
   margin: 15px;
   border: 1px solid $primary-font-color;
   background-color: #264348;
@@ -86,6 +92,7 @@ div.package-view {
 }
 
 .review-container {
+  margin-top: 10px;
   background-color: $third-background-color;
   .panel-heading {
     background-color: #264348;

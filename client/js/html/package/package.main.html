@@ -4,6 +4,7 @@
     <div class="col-xs-7">
         <!-- title -->
       <div class="row">
+
         <legend class="package-title">{{package.info.title}}
           <span><a ng-show="package.user.canEditPackage" class="name edit-package" ui-sref="editPackage({packageName: package.info.title})"><span class="glyphicon glyphicon-pencil" aria-hidden="true"><button>edit</button></span></a></span>
         </legend>
@@ -31,38 +32,46 @@
     <!-- column two -->
     <div class="col-xs-5">
       <!-- stars -->
-      <div class="row">
-        <span class="package-view-stars col-xs-8" ng-if="package.info.totalStars > 0">
+      <div class="container-fluid">
+      <div class="row row-fluid">
+        <span class="package-view-stars span8" ng-if="package.info.totalStars > 0">
           <stars type="view" max="5" score="package.getRating(package.info)*5"></stars>
-          <span>({{package.info.reviews.length}})
+          <span>({{package.info.reviews.length}})</span>
         </span>
-        <span class="package-view-stars" ng-if="package.info.totalStars === 0">(No Ratings Yet)
+        <span class="package-view-stars span8" ng-if="package.info.totalStars === 0">(No Ratings Yet)
+        </span>
+        <span class="span4 package-view-stars downloads">
+          <i class="fa fa-download"></i>({{package.info.downloads}})
         </span>
       </div>
+    </div>
       <!-- contact info -->
       <div class="contact-info">
         <div class="row">
-          <div class="col-xs-8">
+          <div class="col-xs-12">
             <!-- owner username -->
-            <h5 class="package-view-username"> created by:
+            <h5 class="package-view-contact"> created by:
               <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
             </h5>
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-8 package-view-links">email:
+          <div class="col-xs-12">
             <!-- owner email -->
-            <a class="package-view-links" href="mailto:{{package.user.email}}">
+            <h5 class="package-view-links">email:
+              <a href="mailto:{{package.user.email}}">
               {{package.user.email}}
-            </a>
+              </a>
+            </h5>
           </div>
         </div>
         <div class="row">
           <!-- owner website -->
-          <div ng-if="package.user.website" class="col-xs-8">website:
-            <a class="package-view-links">
-              {{package.user.website}}
-            </a>
+          <div ng-if="package.user.website" class="col-xs-12">  <h5 class="package-view-links">website:
+              <a href="package.user.website">
+                {{package.user.website}}
+              </a>
+            </h5>
           </div>
         </div>
         <!-- user reviews -->
@@ -81,7 +90,7 @@
             </div>
           <!-- </div> -->
         </div>
-        <div class="row">Submit your review
+        <div class="row"><h5>Submit your review</h5>
           <div rating score=0 package="package.info" user="package.user">
           </div>
         </div>
