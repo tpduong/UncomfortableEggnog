@@ -1,42 +1,68 @@
 <div class="package-view" ng-controller="PackageCtrl as package">
   <div class="row">
+    <!-- column one -->
     <div class="col-xs-7">
-      <legend class="package-title">{{package.info.title}}
-        <span><a ng-show="package.user.canEditPackage" class="name edit-package" ui-sref="editPackage({packageName: package.info.title})"><span class="glyphicon glyphicon-pencil" aria-hidden="true"><button>edit</button></span></a></span>
-      </legend>
+        <!-- title -->
+      <div class="row">
+        <legend class="package-title">{{package.info.title}}
+          <span><a ng-show="package.user.canEditPackage" class="name edit-package" ui-sref="editPackage({packageName: package.info.title})"><span class="glyphicon glyphicon-pencil" aria-hidden="true"><button>edit</button></span></a></span>
+        </legend>
+      </div>
+      <!-- description -->
+      <div class="row">
+        <div class="col-xs-8 package-view-desc">
+          <h5>{{package.info.description}}</h5>
+        </div>
+      </div>
+      <!-- list of package commands -->
+      <div class="row">
+        <div class="command-list col-xs-11">
+          <h5 class="command-list-title">Core Commands: </h5>
+          <ul>
+            <li ng-repeat="command in package.info.packageContents
+            track by $index">
+              <span>command: {{command}}</span>
+              <span>action: {{command[$index]}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <!-- column two -->
     <div class="col-xs-5">
-      <span class="package-view-stars" ng-if="package.info.totalStars > 0">
-        <stars type="view" max="5" score="package.getRating(package.info)*5"></stars>
-      </span>
-      <span class="package-view-stars" ng-if="package.info.totalStars === 0">(No Ratings Yet)
-      </span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-7 package-view-desc">
-      <h5>{{package.info.description}}</h5>
-    </div>
-    <div class="col-xs-5 contact-info">
-      <h3 class="package-view-username"> created by:
-        <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
-      </h3>
-      <a class="package-view-email" href="mailto:{{package.user.email}}">
-        <p>{{package.user.email}}</p>
-      </a>
-      <p>{{package.user.website}}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="command-list col-xs-8">
-      <h5 class="command-list-title">Core Commands: </h5>
-      <ul>
-        <li ng-repeat="command in package.info.packageContents
-        track by $index">
-          <span>command: {{command}}</span>
-          <span>action: {{command[$index]}}</span>
-        </li>
-      </ul>
+      <!-- stars -->
+      <div class="row">
+        <span class="package-view-stars col-xs-8" ng-if="package.info.totalStars > 0">
+          <stars type="view" max="5" score="package.getRating(package.info)*5"></stars>
+        </span>
+        <span class="package-view-stars" ng-if="package.info.totalStars === 0">(No Ratings Yet)
+        </span>
+      </div>
+      <!-- contact info -->
+      <div class="contact-info">
+        <div class="row">
+          <div class="col-xs-8">
+            <!-- package owner username -->
+            <h5 class="package-view-username"> created by:
+              <a ui-sref="user({userName: package.user.username})">{{package.user.username}}</a>
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8">
+            <a class="package-view-links" href="mailto:{{package.user.email}}">
+              {{package.user.email}}
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-8">
+            <a class="package-view-links">
+              {{package.user.website}}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div>

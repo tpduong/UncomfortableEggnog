@@ -1,32 +1,30 @@
 @import '../color-palette';
 @import '../effects-mixins';
 @import '../nav/navbar.styles';
+@import '../signup/signup.styles';
 
 @include buttonReset();
 
 div.package-view {
-  background-color: $secondary-background-color;
-  border: 1px solid #2e2e2e;
-  width: 60vw;
+  @extend .form-container;
 }
+
 .package-view-stars{
   display: inline-block;
+  /*float: right;*/
   height: 20px;
   font-size: 25px;
   stars {
+    margin: 0 5px 5px 5px;
+    padding-left: 5px;
     a {
       padding: 0;
       margin: 0;
-      &:hover {
-        color: #337ab7;
-        text-decoration: none;
-      }
       i.fa {
         padding: 0 2px;
         margin: 0;
-
+        color: $star-color;
       }
-
     }
   }
 }
@@ -38,11 +36,13 @@ div.package-view {
     font-size: 15px;
   }
 }
-.package-view-desc {
+/*.package-view-desc {
   padding: 0;
   margin: 0;
-}
+}*/
 .contact-info {
+/*  padding: 5px 0 0 0;
+  margin-left: 0;*/
   a {
     color: $secondary-font-color;
       &:hover {
@@ -53,9 +53,15 @@ div.package-view {
       }
   }
   .package-view-username {
-    font-size: 25px;
+    padding: 5px 0 0 5px;
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    font-size: 15px;
   }
-  .package-view-email {
+  .package-view-links {
+    margin: 0 0 0 10px;
+    padding: 0 0 0 5px;
+    @extend .package-view-username;
   }
 }
 
