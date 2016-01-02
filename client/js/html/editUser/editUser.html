@@ -1,8 +1,11 @@
+<link rel="stylesheet" href="../../assets/styles/editUser/editUser.styles.css">
 <div ng-controller="EditUserCtrl as eu">
-  <form class="form-horizontal form-signup" name="signupForm" ng-submit="eu.validateAndPost()" role="form" novalidate>
-    <fieldset style="width: 50%">
+  <div class="form-container">
+    <legend>Edit Your Profile</legend>
+  <form class="form-horizontal form-editUser" name="signupForm" ng-submit="eu.validateAndPost()" role="form" novalidate>
+
     <!-- Title -->
-      <legend>Edit Your Profile</legend>
+
 
       <!-- Name input-->
       <div class="form-group">
@@ -134,5 +137,6 @@
       </div>
     </fieldset>
   </form>
+  </div>
 </div>
 
