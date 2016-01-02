@@ -33,6 +33,7 @@
         }
         $scope.$watch('rated', function (newValue, oldValue) {
           if (newValue) {
+            init();
             $timeout(function () {
               $scope.rated = false;
             }, 3000);

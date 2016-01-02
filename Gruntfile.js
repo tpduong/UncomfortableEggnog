@@ -26,6 +26,7 @@ module.exports = function (grunt) {
           'client/assets/styles/signup/signup.styles.css': 'client/assets/styles/signup/signup.styles.scss',
           'client/assets/styles/search/search.styles.css': 'client/assets/styles/search/search.styles.scss',
           'client/assets/styles/login/login.styles.css': 'client/assets/styles/login/login.styles.scss',
+          'client/assets/styles/user/user.main.styles.css': 'client/assets/styles/user/user.main.styles.scss',
           'client/assets/styles/index.styles.css': 'client/assets/styles/index.styles.scss',
           'client/assets/styles/color-palette.css': 'client/assets/styles/color-palette.scss',
           'client/assets/styles/effects-mixins.css': 'client/assets/styles/effects-mixins.scss'
