@@ -20,19 +20,22 @@ h1.title {
   font: normal normal 800 30px/40px Arial, Helvetica, sans-serif;
 }
 
-
-
-
-.btn-primary, .btn-primary:focus {
+.btn-primary, .btn-primary:focus, .btn:focus {
   @include fade-transition();
   background-color: #264348;
   border-color: $primary-font-color;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn:hover {
   @include fade-transition();
   background-color: $primary-font-color;
   color: black;
+}
+
+.source-download {
+  background: none;
+  font-size: 14px;
+  @extend .btn:focus;
 }
 
 

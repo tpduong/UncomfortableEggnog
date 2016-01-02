@@ -78,7 +78,7 @@ div .landing-jumbotron {
 h1.title {
   font: normal normal 800 30px/40px Arial, Helvetica, sans-serif; }
 
-.btn-primary, .btn-primary:focus {
+.btn-primary, .btn-primary:focus, .btn:focus, .source-download {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -86,13 +86,17 @@ h1.title {
   background-color: #264348;
   border-color: white; }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn:hover {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
   background-color: white;
   color: black; }
+
+.source-download {
+  background: none;
+  font-size: 14px; }
 
 i {
   padding-left: 5px;
@@ -329,5 +333,30 @@ div.package-view {
   padding: 5px;
   margin: 10px 0 0 10px;
   /*background-color: #264348;*/ }
+
+.fadein,
+.fadeout {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s; }
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  /*display: block !important;*/ }
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  /*display: block !important;*/ }
+
+.message-display {
+  /*@include fade-transition();*/
+  height: 3vh;
+  text-align: center; }
+
+.message-container {
+  margin-bottom: 500px; }
 
 /*# sourceMappingURL=packageView.styles.css.map */

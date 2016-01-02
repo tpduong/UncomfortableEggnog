@@ -8,8 +8,12 @@ legend {
   font-size: 35px;
   color: white; }
 
+a {
+  color: #8DF2E2; }
+
 a:hover, a:focus, a:active {
-  text-decoration: none; }
+  text-decoration: none;
+  color: white; }
 
 stars {
   /*  a:hover {

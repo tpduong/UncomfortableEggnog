@@ -13,8 +13,12 @@ legend {
   color: $primary-font-color;
 }
 
+a {
+  color: $secondary-font-color;
+}
 a:hover, a:focus, a:active {
   text-decoration: none;
+  color: $primary-font-color;
 }
 
 stars {
