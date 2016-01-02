@@ -7,7 +7,12 @@ div.user-main {
 }
 
 .username {
-  /*padding-top: 10px;*/
+  padding-left: 0;
+}
+
+.user-info {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 span.edit-user {
@@ -28,7 +33,7 @@ span.edit-user {
 .contact-info {
   text-align: right;
   margin-bottom: 10px;
-  a {
+  a, .link-website {
     color: $secondary-font-color;
     &:hover {
       cursor: pointer;

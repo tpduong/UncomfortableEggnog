@@ -21,11 +21,15 @@
     };
 
     self.countPackages = function (count) {
+        var name = self.fields.username;
+        if (self.fields.canEditPackages) {
+          name = 'you';
+        }
         if (count === 1) {
-          return "1 package by " + self.fields.username;
+          return "1 package by " + name;
         }
         if (count !== 1) {
-          return count + " packages by " + self.fields.username;
+          return count + " packages by " + name;
         }
     };
 
