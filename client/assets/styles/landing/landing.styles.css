@@ -57,7 +57,7 @@ i {
   margin-left: calc(25vw); }
 
 .center-vert {
-  margin-top: calc(35vh); }
+  margin-top: calc(12vh); }
 
 .col-xs-5 {
   padding-top: 10px; }
@@ -87,5 +87,8 @@ i {
   height: 100px;
   border: 1px black solid;
   border-radius: 5px; }
+
+#screencast {
+  border: 3px; }
 
 /*# sourceMappingURL=landing.styles.css.map */
