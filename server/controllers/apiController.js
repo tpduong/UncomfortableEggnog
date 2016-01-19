@@ -128,7 +128,6 @@ module.exports.addOrUpdateReview = function (req, res) {
   review.userId = req.user._id;
   review.username = req.user.username;
   var prevReview = req.body.prevReview || null;
-  console.log('prev review?', prevReview);
   if (!prevReview) {
     helpers.addReview(id, review, function (err, packageEntry) {
       if (err) {
@@ -143,7 +142,6 @@ module.exports.addOrUpdateReview = function (req, res) {
         console.log('error');
         res.redirect('/');
       } else {
-        console.log('successfully updated', packageEntry);
         res.json(packageEntry);
       }
     });
@@ -151,7 +149,6 @@ module.exports.addOrUpdateReview = function (req, res) {
 };
 
 module.exports.downloadPackage = function (req, res, next) {
-  console.log("download");
   var id = req.params.id;
   var folder = rootFolder + '/server/tmp/' + Date.now() + '/';
   helpers.findPackageById(id, function (packageEntry, err) {
