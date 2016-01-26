@@ -2,7 +2,11 @@
 //controllers are request handers that work with routes.
 var jwt = require('jsonwebtoken');
 var helpers = require('../helpers/helpers');
-var jwtKey = 'test';
+if (process.env.JWT_KEY) {
+  var jwtKey = process.env.JWT_KEY;
+} else {
+  var jwtKey = 'test';
+}
 
 /*************************************
                      Login Handlers

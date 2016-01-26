@@ -1,6 +1,11 @@
 var jwt = require('jsonwebtoken');
 // TODO: refactor jwtkey out
-var jwtKey = 'test';
+
+if (process.env.JWT_KEY) {
+  var jwtKey = process.env.JWT_KEY;
+} else {
+  var jwtKey = 'test';
+}
 
 module.exports = {
   verifyUser: function (req, res, next) {
@@ -16,7 +21,7 @@ module.exports = {
           res.redirect('/');
         } else {
           // when decoded, attach to req
-          req.user = decoded;
+          req.user = decoded._doc;
           next();
         }
       });
